@@ -26,6 +26,11 @@ RUN yum -y install epel-release && \
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image
 # sets io.openshift.s2i.scripts-url label that way, or update that label
 COPY ./s2i/bin/ /usr/libexec/s2i
+LABEL io.k8s.description="S2I builder image for R" \
+      io.k8s.display-name="r-stable" \
+      io.openshift.expose-services="8080:http" \
+      io.openshift.tags="r-stable" \
+      io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN mkdir /opt/app-root
