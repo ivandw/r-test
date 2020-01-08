@@ -34,6 +34,7 @@ LABEL io.k8s.description="S2I builder image for R" \
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN mkdir /opt/app-root
+RUN chmod -R 777 /usr/lib64/R/library
 RUN chown -R 1001:1001 /opt/app-root
 
 
