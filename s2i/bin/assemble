@@ -24,7 +24,7 @@ cp -Rf /tmp/src/. ./
 
 # ejecuta istalacion de paquetes de R
 
-Rscript packages.R
+exec Rscript packages.R
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
