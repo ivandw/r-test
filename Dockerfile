@@ -9,7 +9,7 @@ RUN yum install -y epel-release && \
     rm -rf /var/cache/yum && \
     R --version && \
     Rscript --version && \
-    echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.method = "libcurl")' >> /usr/lib64/R/library/base/R/Rprofile
+    echo 'options(repos = c(CRAN = "http://www.est.colpos.mx/R-mirror"), download.file.method = "libcurl")' >> /usr/lib64/R/library/base/R/Rprofile
 
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image
 # sets io.openshift.s2i.scripts-url label that way, or update that label
